@@ -12,9 +12,7 @@ class Contenedor {
             return JSON.parse(contenido)
         }
         catch (error) {
-            await fs.promises.writeFile(this.ruta, JSON.stringify([], null, 2))
-            const contenido = await fs.promises.readFile(this.ruta, 'utf-8')
-            return JSON.parse(contenido)
+            throw new Error ("No se pudo leer el archivo")
         }
     }
 
